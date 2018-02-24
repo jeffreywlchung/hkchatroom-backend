@@ -9,7 +9,22 @@ var session = require('express-session');
 //require database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/chat');
+// var db = monk('localhost:27017/chat');
+
+// Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+var db;
+
+// Connect to the database before starting the application server.
+mongo.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  // Save database object from the callback for reuse.
+  db = database;
+  console.log("Database connection ready");
+});
 
 //require api.js
 var api = require('./routes/api');
