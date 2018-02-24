@@ -9,7 +9,7 @@ var session = require('express-session');
 //require database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://access:123456@ds233238.mlab.com:33238/chat101');
+var db = monk('localhost:27017/chat');
 
 //require api.js
 var api = require('./routes/api');
