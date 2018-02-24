@@ -172,7 +172,7 @@ router.post('/appendChatroomToList', bodyParser.json(), function(req, res) {
   var userFilter = {'username': username};
 
   //QUERY: to get information of current user
-  userCollection.update(userFilter, {$addToSet: {'chatroomList': {'chatroomName': chatroomName, 'chatroomKey': chatroomKey}}}, function(err, result) {
+  userCollection.update(userFilter, {$addToSet: {'chatroomList': {'chatroomName': chatroomName, 'chatroomKey': chatroomKey}, $upsert: true}}, function(err, result) {
     if (err === null) {
       //SUCCESSFUL: Send success message in json
       res.json({'result': 'success'});
@@ -182,7 +182,6 @@ router.post('/appendChatroomToList', bodyParser.json(), function(req, res) {
     }
   });
 });
-
 
 /* GET getchat/:key page */
 router.get('/getchat/:key', function(req, res) {
@@ -315,7 +314,5 @@ router.post('/postmessage/:chatroomid', bodyParser.json(), function(req, res) {
     }
   });
 });
-
-
 
 module.exports = router;
