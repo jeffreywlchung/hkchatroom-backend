@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.sendMessage {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  display: block;
+  width: 57.66%;
+}
+
+.conversationDiv {
+  overflow: hidden; 
+}
+
+.conversationContainer {
+  overflow-y: auto;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  position: fixed;
+  width: 57.66%;
+  height: calc(100% - 52px - 33px - 20px - 20px - 55px - 10px) !important;
+  padding-top: 20px;
+}
+
+.date {
+  display:inline-block;
+  clear: both;
+  margin-top: 3px;
+  font-size: 0.75em;
+  color:#555555;
+  background-color: #DDDDDD;
+  padding:5px;
+  border-radius:5px;
+}
+
+.time {
+  color: #eeeeee;
+  font-size: 0.75em;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.senderName {
+  font-weight: bold;
+  padding-bottom: 1px;
+}
+
+/* .text-bubble {
+  color: white;
+  background-color: #5AC0DF;
+  padding:5px;
+  border-radius:5px;
+  margin: 10px;
+	height: auto;
+}
+
+.text {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 0px !important;
+} */
+
+.msg {
+  display:inline-block;
+  clear: both;
+  padding: 8px;
+  border-radius: 15px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  max-width: 70%;
+}
+
+.otherMsg{
+  background: #5AC0DF;
+  float: left;
+  color: white;
+}
+
+.myMsg{
+  float: right;
+  background: #AAAAAA;
+  color: white;
+}
+
+.col-sm-12 + .myMsg{
+  border-bottom-right-radius: 5px;
+}
+
+.otherMsg + .myMsg{
+  border-bottom-right-radius: 5px;
+}
+
+.myMsg + .myMsg{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.me:last-of-type {
+  border-bottom-right-radius: 15px;
+}

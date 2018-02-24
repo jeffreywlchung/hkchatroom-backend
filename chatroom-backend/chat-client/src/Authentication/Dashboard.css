@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.greetings {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.wholePanel {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wholePanel, .leftPanel, .leftPanel2 {
+  height: 100%;
+}
