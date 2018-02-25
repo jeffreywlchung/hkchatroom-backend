@@ -100,7 +100,7 @@ router.post('/register', bodyParser.json(), function(req, res) {
   collection.find(usernameFilter, {}, function(err, result) {
     if (err === null) {
       if (result.length === 0) {
-        var createUser = {'username': username, 'password': password, 'displayName': displayName};
+        var createUser = {'username': username, 'password': password, 'displayName': displayName, 'chatroomList': []};
         //QUERY: to create a new user
         collection.insert(createUser, function(err, result){
           if (err) {
