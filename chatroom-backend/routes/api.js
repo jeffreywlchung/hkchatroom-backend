@@ -108,6 +108,9 @@ router.post('/register', bodyParser.json(), function(req, res) {
             res.send(err);
           } else {
             //SUCCESSFUL: Return user information on valid insertion
+            req.session.userId = result._id;
+            req.session.displayName = result.displayName;
+            req.session.username = result.username;
             res.json({'username': result.username, 'displayName': result.displayName, 'chatroomList': []});
           }
         });
